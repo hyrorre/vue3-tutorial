@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue3 CDN Sample</title>
+    <script src="https://unpkg.com/vue@3.2.36"></script>
+  </head>
+
+  <body>
+    <div id="app" v-cloak>
+      <h1>Vue3 CDN Sample</h1>
+      <p>{{ counter }}</p>
+      <button @click="increment">+</button>
+    </div>
+
+    <script>
+      const app = {
+        setup() {
+          const counter = Vue.ref(0);
+          const increment = () => {
+            counter.value++;
+          };
+
+          return { counter, increment };
+        },
+      };
+      Vue.createApp(app).mount("#app");
+    </script>
+
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </body>
+</html>
